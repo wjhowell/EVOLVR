@@ -1,0 +1,8 @@
+EECS 493 Evolvr To-Do List
+-Setup Github, understand how to push/pull
+-Setup Android Studio
+-Setup Google Hangouts Groupchat
+
+For prototype:
+	-Plan A: Basic structure of Android app with simple menu
+	-Plan B: Sumbit screens from Wesley's prototype
