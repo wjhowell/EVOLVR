@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">EVOLVR_proto</string>
+    <string name="evolvr">EVOLVR</string>
+    <string name="silent">The R is Silent</string>
+    <string name="start">Start</string>
+    <string name="play">Play</string>
+    <string name="highscores">High Scores</string>
+    <string name="settings">Settings</string>
+    <string name="quit">Quit</string>
+    <string name="back">Back</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="mapmode">Map Mode</string>
+    <string name="static_">Static</string>
+    <string name="dynamic">Dynamic</string>
+    <string name="username">Username</string>
+    <string name="name">Name...</string>
+    <string name="resume">Resume</string>
+    <string name="mainmenu">Main Menu</string>
+
+    <string name="pacman">Pacman</string>
+    <string name="chris">Chris</string>
+    <string name="wesley">Wesley</string>
+    <string name="andrew">Andrew</string>
+    <string name="alex">Alex</string>
+
+
+</resources>
