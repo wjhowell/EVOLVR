@@ -152,7 +152,7 @@
         android:layout_width="175dp"
         android:layout_height="50dp"
         android:text="Back"
-        android:id="@+id/button4"
+        android:id="@+id/backbutton"
         android:layout_gravity="center"
         android:textStyle="bold"
         android:typeface="monospace"
