@@ -88,7 +88,7 @@
             android:layout_width="175dp"
             android:layout_height="50dp"
             android:text="Quit"
-            android:id="@+id/button4"
+            android:id="@+id/quitbutton"
             android:layout_gravity="center"
             android:textStyle="bold"
             android:typeface="monospace"

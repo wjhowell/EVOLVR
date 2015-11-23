@@ -73,25 +73,22 @@
                         android:layout_height="wrap_content"
                         android:text="Easy"
                         android:id="@+id/radioButton"
-                        android:onClick="onRadioButtonClicked"
                         android:checked="true"
-                        android:textColor="#ff0000" />
+                        android:textColor="#ffffff00" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Medium"
                         android:id="@+id/radioButton2"
-                        android:onClick="onRadioButtonClicked"
-                        android:textColor="#ff0000" />
+                        android:textColor="#ffffff00" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hard"
                         android:id="@+id/radioButton3"
-                        android:onClick="onRadioButtonClicked"
-                        android:textColor="#ff0000" />
+                        android:textColor="#ffffff00" />
                 </RadioGroup>
             </TableRow>
 
@@ -118,17 +115,15 @@
                         android:layout_height="wrap_content"
                         android:text="Static"
                         android:id="@+id/radioButton4"
-                        android:onClick="onRadioButtonClicked"
                         android:checked="true"
-                        android:textColor="#ff0000" />
+                        android:textColor="#ffffff00" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dynamic"
                         android:id="@+id/radioButton5"
-                        android:onClick="onRadioButtonClicked"
-                        android:textColor="#ff0000" />
+                        android:textColor="#ffffff00" />
                 </RadioGroup>
 
             </TableRow>
@@ -157,7 +152,7 @@
                     android:ems="10"
                     android:id="@+id/editText"
                     android:gravity="end"
-                    android:textColor="#ff0000" />
+                    android:textColor="#ffffff00" />
             </TableRow>
         </TableLayout>
 

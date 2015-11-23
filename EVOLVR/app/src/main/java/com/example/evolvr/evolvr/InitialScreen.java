@@ -19,6 +19,8 @@ implements OnClickListener{
         v1.setOnClickListener(this);
         View v2 = findViewById(R.id.settingsbutton);
         v2.setOnClickListener(this);
+        View v3 = findViewById(R.id.quitbutton);
+        v3.setOnClickListener(this);
     }
 
     //override the OnClickListener interface method
@@ -31,6 +33,10 @@ implements OnClickListener{
         if(arg0.getId() == R.id.settingsbutton){
             Intent intent = new Intent(this,settings_activity.class);
             this.startActivity(intent);
+        }
+        if(arg0.getId() == R.id.quitbutton){
+            finish();
+            System.exit(0);
         }
     }
 }
