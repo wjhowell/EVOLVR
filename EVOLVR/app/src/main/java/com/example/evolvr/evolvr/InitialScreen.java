@@ -29,7 +29,7 @@ implements OnClickListener{
     @Override
     public void onClick(View arg0) {
         if(arg0.getId() == R.id.playbutton){
-            Intent intent = new Intent(this,MapsActivity.class);
+            Intent intent = new Intent(this,MapBoxActivity.class);
             this.startActivity(intent);
         }
         if(arg0.getId() == R.id.highscoresbutton){
