@@ -15,17 +15,23 @@ implements OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-        View v1 = findViewById(R.id.highscoresbutton);
+        View v1 = findViewById(R.id.playbutton);
         v1.setOnClickListener(this);
-        View v2 = findViewById(R.id.settingsbutton);
+        View v2 = findViewById(R.id.highscoresbutton);
         v2.setOnClickListener(this);
-        View v3 = findViewById(R.id.quitbutton);
+        View v3 = findViewById(R.id.settingsbutton);
         v3.setOnClickListener(this);
+        View v4 = findViewById(R.id.quitbutton);
+        v4.setOnClickListener(this);
     }
 
     //override the OnClickListener interface method
     @Override
     public void onClick(View arg0) {
+        if(arg0.getId() == R.id.playbutton){
+            Intent intent = new Intent(this,MapsActivity.class);
+            this.startActivity(intent);
+        }
         if(arg0.getId() == R.id.highscoresbutton){
             Intent intent = new Intent(this,highscores_activity.class);
             this.startActivity(intent);

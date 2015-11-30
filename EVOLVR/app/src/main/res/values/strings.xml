@@ -25,6 +25,7 @@
     <string name="wesley">Wesley</string>
     <string name="andrew">Andrew</string>
     <string name="alex">Alex</string>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>
