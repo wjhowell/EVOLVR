@@ -29,5 +29,6 @@
 
     <string name="accessToken">pk.eyJ1Ijoid2pob3dlbGwiLCJhIjoiY2lobGc0YzF5MG9hY3Zxa2wzb2ppMzI5YyJ9.JFAwxRC5KUbKnRYjbCx4sg</string>
     <string name="title_activity_map_box">MapBoxActivity</string>
+    <string name="title_activity_pause_activity">pause_activity</string>
 
 </resources>

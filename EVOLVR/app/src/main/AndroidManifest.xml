@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.evolvr.evolvr" >
 
-    <uses-sdk tools:overrideLibrary="com.mapbox.mapboxsdk"/>
+    <uses-sdk tools:overrideLibrary="com.mapbox.mapboxsdk" />
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -72,6 +72,15 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.evolvr.evolvr.InitialScreen" />
+        </activity>
+        <activity
+            android:name=".pause_activity"
+            android:label="@string/title_activity_pause_activity"
+            android:parentActivityName=".MapBoxActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.evolvr.evolvr.MapBoxActivity" />
         </activity>
     </application>
 

@@ -1,19 +1,25 @@
 package com.example.evolvr.evolvr;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.View.OnClickListener;
 
+
+import com.google.android.gms.maps.model.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import android.support.v4.content.ContextCompat;
 import com.mapbox.mapboxsdk.annotations.Sprite;
 import com.mapbox.mapboxsdk.annotations.SpriteFactory;
+import com.mapbox.mapboxsdk.constants.MyLocationTracking;
 import com.mapbox.mapboxsdk.constants.Style;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.views.MapView;
 
-public class MapBoxActivity extends AppCompatActivity {
+public class MapBoxActivity extends AppCompatActivity
+implements OnClickListener{
 
     private MapView mapView = null;
 
@@ -21,16 +27,30 @@ public class MapBoxActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_box);
+        View v1 = findViewById(R.id.pausebutton);
+        v1.setOnClickListener(this);
 
         mapView = (MapView) findViewById(R.id.mapview);
-        //mapView.setStyleUrl(Style.MAPBOX_STREETS);
         mapView.setStyleUrl("mapbox://styles/wjhowell/cihl9cng7000lsikx220kkr8p");
         mapView.setCenterCoordinate(new LatLng(42.277112, -83.738152));//center of diag
         mapView.setZoomLevel(14);
         mapView.setRotateEnabled(false);
+
+        mapView.setMyLocationEnabled(true);
+        //mapView.removeAnnotation();
+        //mapView.setMyLocationTrackingMode(MyLocationTracking.TRACKING_FOLLOW); do this for "static" map mode
+
+
         SpriteFactory spriteFactory = new SpriteFactory(mapView);
         Drawable drawable = ContextCompat.getDrawable(this, R.drawable.dot);
         Sprite icon = spriteFactory.fromDrawable(drawable);
+        Drawable drawable2 = ContextCompat.getDrawable(this, R.drawable.pacani);
+        Sprite pac = spriteFactory.fromDrawable(drawable2);
+
+
+        mapView.addMarker(new MarkerOptions()
+                .icon(pac)
+                .position(new LatLng(mapView.getMyLocation())));//pacman
         mapView.addMarker(new MarkerOptions()
                 .icon(icon)
                 .position(new LatLng(42.277835, -83.740781)));//state & william
@@ -104,4 +124,11 @@ public class MapBoxActivity extends AppCompatActivity {
         mapView.onSaveInstanceState(outState);
     }
 
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.pausebutton){
+            Intent intent = new Intent(this,pause_activity.class);
+            this.startActivity(intent);
+        }
+    }
 }

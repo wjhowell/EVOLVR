@@ -18,7 +18,9 @@
         android:textColor="#ffffff00"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/buttonshape" />
+        android:background="@drawable/buttonshape"
+        android:layout_marginTop="25dp"
+        android:paddingTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,7 +47,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="175dp"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:text="Play"
             android:id="@+id/playbutton"
@@ -53,12 +55,12 @@
             android:textStyle="bold"
             android:typeface="monospace"
             android:textColor="#ffff00"
-            android:textSize="32sp"
+            android:textSize="26dp"
             android:layout_margin="10dp"
             android:background="@drawable/buttonshape" />
 
         <Button
-            android:layout_width="175dp"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:text="High Scores"
             android:id="@+id/highscoresbutton"
@@ -66,13 +68,13 @@
             android:textStyle="bold"
             android:typeface="monospace"
             android:textColor="#ffff00"
-            android:textSize="22sp"
+            android:textSize="26dp"
             android:layout_margin="10dp"
             android:background="@drawable/buttonshape"
             android:onClick="gotohighscores"/>
 
         <Button
-            android:layout_width="175dp"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:text="Settings"
             android:id="@+id/settingsbutton"
@@ -80,12 +82,12 @@
             android:textStyle="bold"
             android:typeface="monospace"
             android:textColor="#ffff00"
-            android:textSize="32sp"
+            android:textSize="26dp"
             android:layout_margin="10dp"
             android:background="@drawable/buttonshape" />
 
         <Button
-            android:layout_width="175dp"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:text="Quit"
             android:id="@+id/quitbutton"
@@ -93,7 +95,7 @@
             android:textStyle="bold"
             android:typeface="monospace"
             android:textColor="#ffff00"
-            android:textSize="32sp"
+            android:textSize="26dp"
             android:layout_margin="10dp"
             android:background="@drawable/buttonshape" />
     </GridLayout>

@@ -2,11 +2,13 @@ package com.example.evolvr.evolvr;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class InitialScreen extends AppCompatActivity
 implements OnClickListener{
@@ -23,6 +25,9 @@ implements OnClickListener{
         v3.setOnClickListener(this);
         View v4 = findViewById(R.id.quitbutton);
         v4.setOnClickListener(this);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/retro.ttf");
+        TextView txt = (TextView) findViewById(R.id.textView3);
+        txt.setTypeface(font);
     }
 
     //override the OnClickListener interface method
