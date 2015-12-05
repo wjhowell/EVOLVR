@@ -12,15 +12,14 @@
         android:id="@+id/textView3"
         android:layout_gravity="center_horizontal|top"
         android:textStyle="bold"
-        android:gravity="top|center"
-        android:textSize="@dimen/abc_text_size_display_3_material"
+        android:gravity="center"
+        android:textSize="50dp"
         android:typeface="monospace"
         android:textColor="#ffffff00"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:background="@drawable/buttonshape"
         android:layout_marginTop="25dp"
-        android:paddingTop="10dp" />
+        android:layout_centerInParent="true" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -12,151 +12,173 @@ android:layout_height="match_parent" android:background="#000000" tools:context=
     android:id="@+id/textView3"
     android:layout_gravity="center_horizontal|top"
     android:textStyle="bold"
-    android:gravity="top|center"
-    android:textSize="@dimen/abc_text_size_display_3_material"
+    android:gravity="center"
+    android:textSize="50dp"
     android:typeface="monospace"
     android:textColor="#ffffff00"
     android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true"
     android:background="@drawable/buttonshape"
     android:layout_marginTop="25dp"
-    android:paddingTop="10dp" />
-
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    android:text="Main Menu"
-    android:id="@+id/textView4"
-    android:layout_gravity="top|center"
-    android:textStyle="bold"
-    android:typeface="monospace"
-    android:textColor="#ffffff00"
-    android:gravity="center_horizontal"
-    android:layout_alignBottom="@+id/textView3"
-    android:layout_centerHorizontal="true"
-    android:layout_marginBottom="10dp" />
-
-<GridLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:columnCount="1"
-    android:rowCount="2"
-    android:id="@+id/grid"
-    android:orientation="horizontal">
+    android:layout_centerInParent="true" />
 
     <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true">
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Difficulty"
-                android:id="@+id/textView"
+                android:id="@+id/textView6"
                 android:layout_gravity="top|left"
                 android:textStyle="bold"
                 android:typeface="monospace"
                 android:textColor="#ffffff00"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp"
+                android:textSize="22dp" />
 
-            <RadioGroup android:orientation="horizontal"
+            <RadioGroup
+                android:orientation="horizontal"
                 android:gravity="center_horizontal"
-                android:layout_width="fill_parent">
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Easy"
-                    android:id="@+id/radioButton"
+                    android:id="@+id/radioButton6"
                     android:checked="true"
-                    android:textColor="#ffff00" />
+                    android:textColor="#ffff00"
+                    android:textSize="18dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Medium"
-                    android:id="@+id/radioButton2"
-                    android:textColor="#ffff00" />
+                    android:id="@+id/radioButton7"
+                    android:textColor="#ffff00"
+                    android:textSize="18dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hard"
-                    android:id="@+id/radioButton3"
-                    android:textColor="#ffff00" />
+                    android:id="@+id/radioButton8"
+                    android:textColor="#ffff00"
+                    android:textSize="18dp" />
             </RadioGroup>
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Map Mode"
-                android:id="@+id/textView2"
+                android:id="@+id/textView7"
                 android:layout_gravity="top|left"
                 android:textStyle="bold"
                 android:typeface="monospace"
                 android:textColor="#ffffff00"
                 android:layout_below="@+id/grid"
                 android:layout_toLeftOf="@+id/textView4"
-                android:layout_toStartOf="@+id/textView4" />
+                android:layout_toStartOf="@+id/textView4"
+                android:textSize="22dp" />
 
-            <RadioGroup android:orientation="horizontal"
+            <RadioGroup
+                android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:gravity="end">
+                android:gravity="end"
+                android:layout_height="wrap_content" >
 
                 <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Static"
-                android:id="@+id/radioButton4"
-                android:checked="true"
-                android:textColor="#ffff00"
-                android:layout_alignTop="@+id/radioButton5"
-                android:layout_toLeftOf="@+id/radioButton5"
-                android:layout_toStartOf="@+id/radioButton5" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Static"
+                    android:id="@+id/radioButton9"
+                    android:checked="true"
+                    android:textColor="#ffff00"
+                    android:layout_alignTop="@+id/radioButton10"
+                    android:layout_toLeftOf="@+id/radioButton10"
+                    android:layout_toStartOf="@+id/radioButton10"
+                    android:textSize="18dp" />
 
                 <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dynamic"
-                android:id="@+id/radioButton5"
-                android:textColor="#ffff00"
-                android:layout_below="@+id/grid"
-                android:layout_toRightOf="@+id/textView4"
-                android:layout_toEndOf="@+id/textView4" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dynamic"
+                    android:id="@+id/radioButton10"
+                    android:textColor="#ffff00"
+                    android:layout_below="@+id/grid"
+                    android:layout_toRightOf="@+id/textView4"
+                    android:layout_toEndOf="@+id/textView4"
+                    android:textSize="18dp" />
             </RadioGroup>
-
         </TableRow>
-
     </TableLayout>
 
-</GridLayout>
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
 
-<Button
-    android:layout_width="175dp"
-    android:layout_height="50dp"
-    android:text="Resume"
-    android:id="@+id/resumebutton"
-    android:layout_gravity="center"
-    android:textStyle="bold"
-    android:typeface="monospace"
-    android:textColor="#ffff00"
-    android:textSize="32sp"
-    android:background="@drawable/buttonshape"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginBottom="25dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:padding="10dp" >
+
+            <Button
+                android:layout_width="140dp"
+                android:layout_height="55dp"
+                android:text="Resume"
+                android:id="@+id/resumebutton"
+                android:textStyle="bold"
+                android:typeface="monospace"
+                android:textColor="#ffff00"
+                android:textSize="32sp"
+                android:background="@drawable/buttonshape"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp" />
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:text="Main Menu"
+                android:id="@+id/mainmenu"
+                android:textStyle="bold"
+                android:typeface="monospace"
+                android:textColor="#ffff00"
+                android:textSize="32sp"
+                android:background="@drawable/buttonshape"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp" />
+        </TableRow>
+    </TableLayout>
+
+    <GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:columnCount="1"
+    android:rowCount="2"
+    android:id="@+id/grid"
+    android:orientation="horizontal">
+
+    </GridLayout>
 
 </RelativeLayout>

@@ -12,7 +12,21 @@
         tools:context=".MainMenu"
         >
 
-    <Button
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:id="@+id/score"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:textColor="#ffff00"
+            android:textSize="26dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/buttonshape"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
         android:layout_width="125dp"
         android:layout_height="50dp"
         android:text="Pause"

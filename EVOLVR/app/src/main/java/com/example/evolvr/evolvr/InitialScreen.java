@@ -47,7 +47,8 @@ implements OnClickListener{
         }
         if(arg0.getId() == R.id.quitbutton){
             finish();
-            System.exit(0);
+            moveTaskToBack(true);
+            //System.exit(0);
         }
     }
 }

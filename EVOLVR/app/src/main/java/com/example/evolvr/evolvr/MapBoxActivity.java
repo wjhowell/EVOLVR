@@ -11,6 +11,8 @@ import android.view.View.OnClickListener;
 import com.google.android.gms.maps.model.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import android.support.v4.content.ContextCompat;
+import android.widget.Button;
+
 import com.mapbox.mapboxsdk.annotations.Sprite;
 import com.mapbox.mapboxsdk.annotations.SpriteFactory;
 import com.mapbox.mapboxsdk.constants.MyLocationTracking;
@@ -22,6 +24,10 @@ public class MapBoxActivity extends AppCompatActivity
 implements OnClickListener{
 
     private MapView mapView = null;
+    private String scorestring;
+    private Button scorebutton;
+    private int score;
+    private int lives;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,12 @@ implements OnClickListener{
         setContentView(R.layout.activity_map_box);
         View v1 = findViewById(R.id.pausebutton);
         v1.setOnClickListener(this);
+
+        score = 0;
+        lives = 3;
+        scorestring = "Score: " + String.valueOf(score) + "       Lives: " + String.valueOf(lives);
+        scorebutton = (Button)findViewById(R.id.score);
+        scorebutton.setText(scorestring);
 
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setStyleUrl("mapbox://styles/wjhowell/cihl9cng7000lsikx220kkr8p");

@@ -1,12 +1,14 @@
 package com.example.evolvr.evolvr;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 public class pause_activity extends AppCompatActivity implements View.OnClickListener {
 
@@ -16,12 +18,21 @@ public class pause_activity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.pause_menu);
         View v1 = findViewById(R.id.resumebutton);
         v1.setOnClickListener(this);
+        View v2 = findViewById(R.id.mainmenu);
+        v2.setOnClickListener(this);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/retro.ttf");
+        TextView txt = (TextView) findViewById(R.id.textView3);
+        txt.setTypeface(font);
     }
 
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.resumebutton){
             Intent intent = new Intent(this,MapBoxActivity.class);
+            this.startActivity(intent);
+        }
+        if(v.getId() == R.id.mainmenu){
+            Intent intent = new Intent(this,InitialScreen.class);
             this.startActivity(intent);
         }
     }
