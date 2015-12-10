@@ -103,6 +103,7 @@ implements OnClickListener, MapView.OnMyLocationChangeListener{
         dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
                 .position(new LatLng(42.276315, -83.740733))));//state & LSA bldg
+        mapView.setOnMyLocationChangeListener(this);
         mapView.onCreate(savedInstanceState);
 
     }
