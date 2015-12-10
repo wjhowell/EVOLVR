@@ -2,32 +2,35 @@ package com.example.evolvr.evolvr;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 
-import com.google.android.gms.maps.model.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import android.support.v4.content.ContextCompat;
 import android.widget.Button;
 
 import com.mapbox.mapboxsdk.annotations.Sprite;
 import com.mapbox.mapboxsdk.annotations.SpriteFactory;
-import com.mapbox.mapboxsdk.constants.MyLocationTracking;
-import com.mapbox.mapboxsdk.constants.Style;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.views.MapView;
 
+import java.util.List;
+
 public class MapBoxActivity extends AppCompatActivity
-implements OnClickListener{
+implements OnClickListener, MapView.OnMyLocationChangeListener{
 
     private MapView mapView = null;
     private String scorestring;
     private Button scorebutton;
     private int score;
+    private int dotScore = 10; //How much a dot is worth
     private int lives;
+    private int epsilon = 5; //How close in meters the player needs to be to eat a dot
+    private List<com.mapbox.mapboxsdk.annotations.Marker> dots;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,39 +66,39 @@ implements OnClickListener{
         mapView.addMarker(new MarkerOptions()
                 .icon(pac)
                 .position(new LatLng(mapView.getMyLocation())));//pacman
-        mapView.addMarker(new MarkerOptions()
+        dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.277835, -83.740781)));//state & william
-        mapView.addMarker(new MarkerOptions()
+                .position(new LatLng(42.277835, -83.740781))));//state & william
+        dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.278579, -83.740785)));//state & north u
-        mapView.addMarker(new MarkerOptions()
+                .position(new LatLng(42.278579, -83.740785))));//state & north u
+        dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.278597, -83.739687)));//north u E of state
-        mapView.addMarker(new MarkerOptions()
+                .position(new LatLng(42.278597, -83.739687))));//north u E of state
+        dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.278601, -83.737096)));//north u & fletcher
-        mapView.addMarker(new MarkerOptions()
+                .position(new LatLng(42.278601, -83.737096))));//north u & fletcher
+        dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.277481, -83.734566)));//geddes & church
-        mapView.addMarker(new MarkerOptions()
+                .position(new LatLng(42.277481, -83.734566))));//geddes & church
+        dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.276349, -83.734645)));//church @ dennison
-        mapView.addMarker(new MarkerOptions()
+                .position(new LatLng(42.276349, -83.734645))));//church @ dennison
+        dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.275006, -83.734607)));//church & south u
-        mapView.addMarker(new MarkerOptions()
+                .position(new LatLng(42.275006, -83.734607))));//church & south u
+        dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.275365, -83.737015)));//ugli
-        mapView.addMarker(new MarkerOptions()
+                .position(new LatLng(42.275365, -83.737015))));//ugli
+        dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.274939, -83.738249)));//south u & tappan
-        mapView.addMarker(new MarkerOptions()
+                .position(new LatLng(42.274939, -83.738249))));//south u & tappan
+        dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.274903, -83.740690)));//south u & state
-        mapView.addMarker(new MarkerOptions()
+                .position(new LatLng(42.274903, -83.740690))));//south u & state
+        dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.276315, -83.740733)));//state & LSA bldg
+                .position(new LatLng(42.276315, -83.740733))));//state & LSA bldg
         mapView.onCreate(savedInstanceState);
 
     }
@@ -141,6 +144,33 @@ implements OnClickListener{
         if(v.getId() == R.id.pausebutton){
             Intent intent = new Intent(this,pause_activity.class);
             this.startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onMyLocationChange(Location location) {
+        LatLng pacmanLoc = new LatLng(location);
+        //Start at the end of the list and iterate to the beginning
+        //Prevents skipping dots if one is removed
+        for(int i = dots.size() - 1; i >= 0; i--) {
+            if (pacmanLoc.distanceTo(dots.get(i).getPosition()) < epsilon) {
+                //Eat the dot
+                //Increment score by dotScore
+                score += dotScore;
+                //Update score string
+                scorestring = "Score: " + String.valueOf(score) + "       Lives: " + String.valueOf(lives);
+                scorebutton = (Button)findViewById(R.id.score);
+                scorebutton.setText(scorestring);
+                //remove dot from the list AND the map
+                mapView.removeAnnotation(dots.remove(i));
+            }
+        }
+        if(dots.size() == 0){
+            //Last dot eaten
+            Intent gameover = new Intent(this, gameover_activity.class);
+            Bundle scores = new Bundle(1);
+            scores.putInt("Score", score);
+            this.startActivity(gameover, scores);
         }
     }
 }
