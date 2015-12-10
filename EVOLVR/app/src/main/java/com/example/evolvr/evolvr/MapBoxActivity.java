@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 
+import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import android.support.v4.content.ContextCompat;
 import android.widget.Button;
@@ -19,6 +20,7 @@ import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.views.MapView;
 
 import java.util.List;
+import java.util.Vector;
 
 public class MapBoxActivity extends AppCompatActivity
 implements OnClickListener, MapView.OnMyLocationChangeListener{
@@ -30,7 +32,9 @@ implements OnClickListener, MapView.OnMyLocationChangeListener{
     private int dotScore = 10; //How much a dot is worth
     private int lives;
     private int epsilon = 5; //How close in meters the player needs to be to eat a dot
-    private List<com.mapbox.mapboxsdk.annotations.Marker> dots;
+    private List<com.mapbox.mapboxsdk.annotations.Marker> dots = new Vector<com.mapbox.mapboxsdk.annotations.Marker>();
+    private Marker pacman;
+    private Sprite pacIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +64,11 @@ implements OnClickListener, MapView.OnMyLocationChangeListener{
         Drawable drawable = ContextCompat.getDrawable(this, R.drawable.dot);
         Sprite icon = spriteFactory.fromDrawable(drawable);
         Drawable drawable2 = ContextCompat.getDrawable(this, R.drawable.pacani);
-        Sprite pac = spriteFactory.fromDrawable(drawable2);
+        pacIcon = spriteFactory.fromDrawable(drawable2);
 
 
-        mapView.addMarker(new MarkerOptions()
-                .icon(pac)
+        pacman = mapView.addMarker(new MarkerOptions()
+                .icon(pacIcon)
                 .position(new LatLng(mapView.getMyLocation())));//pacman
         dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
@@ -149,7 +153,13 @@ implements OnClickListener, MapView.OnMyLocationChangeListener{
 
     @Override
     public void onMyLocationChange(Location location) {
-        LatLng pacmanLoc = new LatLng(location);
+        LatLng pacmanLoc = new LatLng(mapView.getMyLocation());
+        //Delete the old pacman icon and make a new one
+        mapView.removeAnnotation(pacman);
+        pacman = mapView.addMarker(new MarkerOptions()
+                .icon(pacIcon)
+                .position(pacmanLoc));
+
         //Start at the end of the list and iterate to the beginning
         //Prevents skipping dots if one is removed
         for(int i = dots.size() - 1; i >= 0; i--) {
