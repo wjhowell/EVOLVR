@@ -17,17 +17,23 @@ implements OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-        View v1 = findViewById(R.id.playbutton);
+        Button v1 = (Button) findViewById(R.id.playbutton);
         v1.setOnClickListener(this);
-        View v2 = findViewById(R.id.highscoresbutton);
+        Button v2 = (Button) findViewById(R.id.highscoresbutton);
         v2.setOnClickListener(this);
-        View v3 = findViewById(R.id.settingsbutton);
+        Button v3 = (Button) findViewById(R.id.settingsbutton);
         v3.setOnClickListener(this);
-        View v4 = findViewById(R.id.quitbutton);
+        Button v4 = (Button) findViewById(R.id.quitbutton);
         v4.setOnClickListener(this);
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/retro.ttf");
         TextView txt = (TextView) findViewById(R.id.textView3);
+        TextView txt2 = (TextView) findViewById(R.id.textView4);
         txt.setTypeface(font);
+        txt2.setTypeface(font);
+        v1.setTypeface(font);
+        v2.setTypeface(font);
+        v3.setTypeface(font);
+        v4.setTypeface(font);
     }
 
     //override the OnClickListener interface method
