@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -17,11 +18,14 @@ implements OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.highscores);
-        View v1 = findViewById(R.id.backbutton);
+        Button v1 = (Button) findViewById(R.id.backbutton);
         v1.setOnClickListener(this);
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/retro.ttf");
+        v1.setTypeface(font);
         TextView txt = (TextView) findViewById(R.id.textView3);
         txt.setTypeface(font);
+        TextView txt2 = (TextView) findViewById(R.id.textView4);
+        txt2.setTypeface(font);
     }
 
     @Override
