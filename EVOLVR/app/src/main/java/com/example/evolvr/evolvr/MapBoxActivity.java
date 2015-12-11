@@ -70,6 +70,11 @@ implements OnClickListener, MapView.OnMyLocationChangeListener{
         pacman = mapView.addMarker(new MarkerOptions()
                 .icon(pacIcon)
                 .position(new LatLng(mapView.getMyLocation())));//pacman
+
+
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.292573, -83.716330))));//BBB
         dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
                 .position(new LatLng(42.277835, -83.740781))));//state & william
@@ -181,7 +186,8 @@ implements OnClickListener, MapView.OnMyLocationChangeListener{
             Intent gameover = new Intent(this, gameover_activity.class);
             Bundle scores = new Bundle(1);
             scores.putInt("Score", score);
-            this.startActivity(gameover, scores);
+            gameover.putExtras(scores);
+            this.startActivity(gameover);
         }
     }
 }

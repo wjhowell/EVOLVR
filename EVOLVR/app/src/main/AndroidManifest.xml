@@ -82,6 +82,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.evolvr.evolvr.MapBoxActivity" />
         </activity>
+        <activity
+            android:name=".gameover_activity"
+            android:label="@string/title_activity_gameover_activity"
+            android:parentActivityName=".MapBoxActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.evolvr.evolvr.MapBoxActivity" />
+        </activity>
     </application>
 
 </manifest>

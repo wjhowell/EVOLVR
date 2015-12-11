@@ -20,8 +20,11 @@ implements OnClickListener{
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/retro.ttf");
         TextView txt = (TextView) findViewById(R.id.textView3);
         txt.setTypeface(font);
+
+        Intent in = getIntent();
+        Bundle b = in.getExtras();
         TextView scoreTxt = (TextView) findViewById(R.id.textView6);
-        int score = savedInstanceState.getInt("Score");
+        int score = b.getInt("Score");
         scoreTxt.setText(Integer.toString(score));
     }
 
