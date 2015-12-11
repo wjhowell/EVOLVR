@@ -60,7 +60,7 @@
 
         <Button
             android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:text="High Scores"
             android:id="@+id/highscoresbutton"
             android:layout_gravity="center"
