@@ -20,7 +20,7 @@
             android:textStyle="bold"
             android:typeface="monospace"
             android:textColor="#ffff00"
-            android:textSize="26dp"
+            android:textSize="22sp"
             android:layout_margin="10dp"
             android:background="@drawable/buttonshape"
             android:layout_alignParentTop="true"
