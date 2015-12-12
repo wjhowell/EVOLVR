@@ -2,6 +2,8 @@ package com.example.evolvr.evolvr;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -47,6 +49,7 @@ implements OnClickListener{
         username.setTypeface(font);
         TextView input = (TextView) findViewById(R.id.editText);
         input.setTypeface(font);
+        input.getBackground().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP);
     }
     @Override
     public void onClick(View arg0) {
