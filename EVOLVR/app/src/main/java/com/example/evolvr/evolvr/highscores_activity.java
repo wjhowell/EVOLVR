@@ -26,6 +26,31 @@ implements OnClickListener{
         txt.setTypeface(font);
         TextView txt2 = (TextView) findViewById(R.id.textView4);
         txt2.setTypeface(font);
+
+        TextView pacman = (TextView) findViewById(R.id.pac);
+        pacman.setTypeface(font);
+        TextView pacmanscore = (TextView) findViewById(R.id.pacscore);
+        pacmanscore.setTypeface(font);
+
+        TextView wesley = (TextView) findViewById(R.id.wesley);
+        wesley.setTypeface(font);
+        TextView wesleyscore = (TextView) findViewById(R.id.wesleyscore);
+        wesleyscore.setTypeface(font);
+
+        TextView chris = (TextView) findViewById(R.id.chris);
+        chris.setTypeface(font);
+        TextView chrisscore = (TextView) findViewById(R.id.chrisscore);
+        chrisscore.setTypeface(font);
+
+        TextView andrew = (TextView) findViewById(R.id.andrew);
+        andrew.setTypeface(font);
+        TextView andrewscore = (TextView) findViewById(R.id.andrewscore);
+        andrewscore.setTypeface(font);
+
+        TextView alex = (TextView) findViewById(R.id.alex);
+        alex.setTypeface(font);
+        TextView alexscore = (TextView) findViewById(R.id.alexscore);
+        alexscore.setTypeface(font);
     }
 
     @Override
