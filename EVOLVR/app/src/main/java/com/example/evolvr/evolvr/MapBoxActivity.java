@@ -1,6 +1,7 @@
 package com.example.evolvr.evolvr;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ import java.util.List;
 import java.util.Vector;
 
 public class MapBoxActivity extends AppCompatActivity
-implements OnClickListener, MapView.OnMyLocationChangeListener{
+        implements OnClickListener, MapView.OnMyLocationChangeListener{
 
     private MapView mapView = null;
     private String scorestring;
@@ -40,14 +41,17 @@ implements OnClickListener, MapView.OnMyLocationChangeListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_box);
-        View v1 = findViewById(R.id.pausebutton);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/retro.ttf");
+        Button v1 = (Button) findViewById(R.id.pausebutton);
         v1.setOnClickListener(this);
+        v1.setTypeface(font);
 
         score = 0;
         lives = 3;
         scorestring = "Score: " + String.valueOf(score) + "       Lives: " + String.valueOf(lives);
         scorebutton = (Button)findViewById(R.id.score);
         scorebutton.setText(scorestring);
+        scorebutton.setTypeface(font);
 
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setStyleUrl("mapbox://styles/wjhowell/cihl9cng7000lsikx220kkr8p");
