@@ -50,6 +50,12 @@ public class MapBoxActivity extends AppCompatActivity
         v1.setTypeface(font);
 
         score = 0;
+        Intent in = getIntent();
+        Bundle b = in.getExtras();
+
+        if(b != null) {
+            score = b.getInt("Score", 69);
+        }
         lives = 3;
         scorestring = "Score: " + String.valueOf(score) + "       Lives: " + String.valueOf(lives);
         scorebutton = (Button)findViewById(R.id.score);
@@ -120,6 +126,17 @@ public class MapBoxActivity extends AppCompatActivity
         dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
                 .position(new LatLng(42.276315, -83.740733))));//state & LSA bldg
+
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.354871, -83.055310))));//medschool 1
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.354688, -83.055198))));//medschool 2
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.354791, -83.055241))));//medschool 3
+
         mapView.setOnMyLocationChangeListener(this);
         mapView.onCreate(savedInstanceState);
 
@@ -165,6 +182,9 @@ public class MapBoxActivity extends AppCompatActivity
     public void onClick(View v) {
         if(v.getId() == R.id.pausebutton){
             Intent intent = new Intent(this,pause_activity.class);
+            Bundle scores = new Bundle(1);
+            scores.putInt("Score", score);
+            intent.putExtras(scores);
             this.startActivity(intent);
         }
     }

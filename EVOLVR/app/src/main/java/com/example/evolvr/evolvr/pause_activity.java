@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 public class pause_activity extends AppCompatActivity
 implements View.OnClickListener {
+    private int score;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,12 +66,19 @@ implements View.OnClickListener {
         else if (mapMode == 2){
             dynamicMode.toggle();
         }
+
+        Intent in = getIntent();
+        Bundle b = in.getExtras();
+        score = b.getInt("Score");
     }
 
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.resumebutton){
             Intent intent = new Intent(this,MapBoxActivity.class);
+            Bundle scores = new Bundle(1);
+            scores.putInt("Score", score);
+            intent.putExtras(scores);
             this.startActivity(intent);
         }
         if(v.getId() == R.id.mainmenu){
