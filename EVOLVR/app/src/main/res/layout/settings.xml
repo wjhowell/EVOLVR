@@ -88,23 +88,24 @@
                         android:id="@+id/radioButton"
                         android:checked="true"
                         android:textColor="#ffff00"
-                        android:textSize="18sp" />
-
+                        android:textSize="18sp"
+                        android:onClick="setDifficulty" />
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Medium"
                         android:id="@+id/radioButton2"
                         android:textColor="#ffff00"
-                        android:textSize="18sp" />
-
+                        android:textSize="18sp"
+                        android:onClick="setDifficulty" />
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hard"
                         android:id="@+id/radioButton3"
                         android:textColor="#ffff00"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:onClick="setDifficulty" />
                 </RadioGroup>
             </TableRow>
 
@@ -144,15 +145,16 @@
                         android:id="@+id/radioButton4"
                         android:checked="true"
                         android:textColor="#ffff00"
-                        android:textSize="18sp" />
-
+                        android:textSize="18sp"
+                        android:onClick="setMode" />
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dynamic"
                         android:id="@+id/radioButton5"
                         android:textColor="#ffff00"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:onClick="setMode" />
                 </RadioGroup>
             </TableRow>
 
@@ -187,7 +189,8 @@
                     android:id="@+id/editText"
                     android:gravity="center_horizontal"
                     android:textColor="#ffffff00"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    android:imeOptions="actionDone" />
             </TableRow>
         </TableLayout>
 
