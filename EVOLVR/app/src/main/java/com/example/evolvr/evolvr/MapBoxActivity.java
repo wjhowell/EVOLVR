@@ -1,6 +1,7 @@
 package com.example.evolvr.evolvr;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
@@ -17,6 +18,7 @@ import android.widget.Button;
 
 import com.mapbox.mapboxsdk.annotations.Sprite;
 import com.mapbox.mapboxsdk.annotations.SpriteFactory;
+import com.mapbox.mapboxsdk.constants.MyLocationTracking;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.views.MapView;
 
@@ -36,6 +38,7 @@ public class MapBoxActivity extends AppCompatActivity
     private List<com.mapbox.mapboxsdk.annotations.Marker> dots = new Vector<com.mapbox.mapboxsdk.annotations.Marker>();
     private Marker pacman;
     private Sprite pacIcon;
+    //private boolean staticmode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,14 +58,19 @@ public class MapBoxActivity extends AppCompatActivity
 
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setStyleUrl("mapbox://styles/wjhowell/cihl9cng7000lsikx220kkr8p");
-        mapView.setCenterCoordinate(new LatLng(42.277112, -83.738152));//center of diag
         mapView.setZoomLevel(14);
         mapView.setRotateEnabled(false);
 
         mapView.setMyLocationEnabled(true);
-        //mapView.removeAnnotation();
-        //mapView.setMyLocationTrackingMode(MyLocationTracking.TRACKING_FOLLOW); do this for "static" map mode
+        mapView.setCenterCoordinate(new LatLng(mapView.getMyLocation()));
 
+        SharedPreferences pref = getSharedPreferences("Settings", MODE_PRIVATE);
+        if(pref.getInt("Mode", 1) == 1) {
+            mapView.setMyLocationTrackingMode(MyLocationTracking.TRACKING_FOLLOW);
+        }
+        if(pref.getInt("Mode", 1) == 2) {
+            mapView.setMyLocationTrackingMode(MyLocationTracking.TRACKING_NONE);
+        }
 
         SpriteFactory spriteFactory = new SpriteFactory(mapView);
         Drawable drawable = ContextCompat.getDrawable(this, R.drawable.dot);
