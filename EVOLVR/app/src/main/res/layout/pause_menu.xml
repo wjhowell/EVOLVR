@@ -65,7 +65,8 @@ android:layout_height="match_parent" android:background="#000000" tools:context=
                     android:id="@+id/radioButton6"
                     android:checked="true"
                     android:textColor="#ffff00"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:onClick="setDifficulty" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -73,15 +74,16 @@ android:layout_height="match_parent" android:background="#000000" tools:context=
                     android:text="Medium"
                     android:id="@+id/radioButton7"
                     android:textColor="#ffff00"
-                    android:textSize="18sp" />
-
+                    android:textSize="18sp"
+                    android:onClick="setDifficulty" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hard"
                     android:id="@+id/radioButton8"
                     android:textColor="#ffff00"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:onClick="setDifficulty" />
             </RadioGroup>
         </TableRow>
 
@@ -121,7 +123,8 @@ android:layout_height="match_parent" android:background="#000000" tools:context=
                     android:id="@+id/radioButton9"
                     android:checked="true"
                     android:textColor="#ffff00"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:onClick="setMode" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -129,7 +132,8 @@ android:layout_height="match_parent" android:background="#000000" tools:context=
                     android:text="Dynamic"
                     android:id="@+id/radioButton10"
                     android:textColor="#ffff00"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:onClick="setMode" />
             </RadioGroup>
         </TableRow>
     </TableLayout>
