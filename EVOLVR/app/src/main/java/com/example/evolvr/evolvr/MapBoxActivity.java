@@ -90,52 +90,79 @@ public class MapBoxActivity extends AppCompatActivity
                 .position(new LatLng(mapView.getMyLocation())));//pacman
 
 
-        dots.add(mapView.addMarker(new MarkerOptions()
-                .icon(icon)
-                .position(new LatLng(42.292573, -83.716330))));//BBB
-        dots.add(mapView.addMarker(new MarkerOptions()
-                .icon(icon)
-                .position(new LatLng(42.277835, -83.740781))));//state & william
-        dots.add(mapView.addMarker(new MarkerOptions()
-                .icon(icon)
-                .position(new LatLng(42.278579, -83.740785))));//state & north u
-        dots.add(mapView.addMarker(new MarkerOptions()
-                .icon(icon)
-                .position(new LatLng(42.278597, -83.739687))));//north u E of state
-        dots.add(mapView.addMarker(new MarkerOptions()
-                .icon(icon)
-                .position(new LatLng(42.278601, -83.737096))));//north u & fletcher
-        dots.add(mapView.addMarker(new MarkerOptions()
-                .icon(icon)
-                .position(new LatLng(42.277481, -83.734566))));//geddes & church
-        dots.add(mapView.addMarker(new MarkerOptions()
-                .icon(icon)
-                .position(new LatLng(42.276349, -83.734645))));//church @ dennison
-        dots.add(mapView.addMarker(new MarkerOptions()
-                .icon(icon)
-                .position(new LatLng(42.275006, -83.734607))));//church & south u
-        dots.add(mapView.addMarker(new MarkerOptions()
-                .icon(icon)
-                .position(new LatLng(42.275365, -83.737015))));//ugli
-        dots.add(mapView.addMarker(new MarkerOptions()
-                .icon(icon)
-                .position(new LatLng(42.274939, -83.738249))));//south u & tappan
-        dots.add(mapView.addMarker(new MarkerOptions()
-                .icon(icon)
-                .position(new LatLng(42.274903, -83.740690))));//south u & state
-        dots.add(mapView.addMarker(new MarkerOptions()
-                .icon(icon)
-                .position(new LatLng(42.276315, -83.740733))));//state & LSA bldg
+//        dots.add(mapView.addMarker(new MarkerOptions()
+//                .icon(icon)
+//                .position(new LatLng(42.292573, -83.716330))));//BBB
+//        dots.add(mapView.addMarker(new MarkerOptions()
+//                .icon(icon)
+//                .position(new LatLng(42.277835, -83.740781))));//state & william
+//        dots.add(mapView.addMarker(new MarkerOptions()
+//                .icon(icon)
+//                .position(new LatLng(42.278579, -83.740785))));//state & north u
+//        dots.add(mapView.addMarker(new MarkerOptions()
+//                .icon(icon)
+//                .position(new LatLng(42.278597, -83.739687))));//north u E of state
+//        dots.add(mapView.addMarker(new MarkerOptions()
+//                .icon(icon)
+//                .position(new LatLng(42.278601, -83.737096))));//north u & fletcher
+//        dots.add(mapView.addMarker(new MarkerOptions()
+//                .icon(icon)
+//                .position(new LatLng(42.277481, -83.734566))));//geddes & church
+//        dots.add(mapView.addMarker(new MarkerOptions()
+//                .icon(icon)
+//                .position(new LatLng(42.276349, -83.734645))));//church @ dennison
+//        dots.add(mapView.addMarker(new MarkerOptions()
+//                .icon(icon)
+//                .position(new LatLng(42.275006, -83.734607))));//church & south u
+//        dots.add(mapView.addMarker(new MarkerOptions()
+//                .icon(icon)
+//                .position(new LatLng(42.275365, -83.737015))));//ugli
+//        dots.add(mapView.addMarker(new MarkerOptions()
+//                .icon(icon)
+//                .position(new LatLng(42.274939, -83.738249))));//south u & tappan
+//        dots.add(mapView.addMarker(new MarkerOptions()
+//                .icon(icon)
+//                .position(new LatLng(42.274903, -83.740690))));//south u & state
+//        dots.add(mapView.addMarker(new MarkerOptions()
+//                .icon(icon)
+//                .position(new LatLng(42.276315, -83.740733))));//state & LSA bldg
 
         dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.354871, -83.055310))));//medschool 1
+                .position(new LatLng(42.291609, -83.714962))));//north diag 1 (lowright)
         dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.354688, -83.055198))));//medschool 2
+                .position(new LatLng(42.291609, -83.715418))));//north diag 2
         dots.add(mapView.addMarker(new MarkerOptions()
                 .icon(icon)
-                .position(new LatLng(42.354791, -83.055241))));//medschool 3
+                .position(new LatLng(42.291621, -83.715879))));//north diag 3
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.291601, -83.716335))));//north diag 4
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.291609, -83.716716))));//north diag 5(lowleft)
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.292093, -83.716705))));//north diag 6
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.292371, -83.716700))));//north diag 7
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.292566, -83.716695))));//north diag 8(topleft)
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.292573, -83.716249))));//north diag 9
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.292585, -83.715793))));//north diag 10
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.292443, -83.714935))));//north diag 11(topright)
+        dots.add(mapView.addMarker(new MarkerOptions()
+                .icon(icon)
+                .position(new LatLng(42.292077, -83.714935))));//north diag 12
 
         mapView.setOnMyLocationChangeListener(this);
         mapView.onCreate(savedInstanceState);
