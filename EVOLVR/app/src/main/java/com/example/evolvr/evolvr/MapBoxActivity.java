@@ -38,7 +38,6 @@ public class MapBoxActivity extends AppCompatActivity
     private List<com.mapbox.mapboxsdk.annotations.Marker> dots = new Vector<com.mapbox.mapboxsdk.annotations.Marker>();
     private Marker pacman;
     private Sprite pacIcon;
-    //private boolean staticmode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
