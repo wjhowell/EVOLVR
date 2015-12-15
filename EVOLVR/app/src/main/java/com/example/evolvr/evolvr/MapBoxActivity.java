@@ -54,7 +54,7 @@ public class MapBoxActivity extends AppCompatActivity
         Bundle b = in.getExtras();
 
         if(b != null) {
-            score = b.getInt("Score", 69);
+            score = b.getInt("Score", 0);
         }
         lives = 3;
         scorestring = "Score: " + String.valueOf(score) + "       Lives: " + String.valueOf(lives);
@@ -164,7 +164,76 @@ public class MapBoxActivity extends AppCompatActivity
                 .icon(icon)
                 .position(new LatLng(42.292077, -83.714935))));//north diag 12
 
-        mapView.setOnMyLocationChangeListener(this);
+        if(pref.getInt("Difficulty", 1) == 2 || pref.getInt("Difficulty", 1) == 3) {//if medium or hard
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.292649, -83.717113))));//north path 1
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.292708, -83.717671))));//north path 2
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.292752, -83.718122))));//north path 3
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.292966, -83.718771))));//north path 4 (murfin)
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.292681, -83.718712))));//murfin 5
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.292395, -83.718669))));//murfin 6
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.292165, -83.718610))));//murfin 7
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.291927, -83.718562))));//murfin 8
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.291625, -83.718513))));//murfin 9
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.291181, -83.718444))));//murfin 10
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.290768, -83.718444))));//murfin 11
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.290490, -83.718417))));//pierpont bus stop
+        }
+
+        if(pref.getInt("Difficulty", 1) == 3) {//if hard
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.290427, -83.717558))));//bonisteel 1
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.290415, -83.716255))));//bonisteel 2
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.290415, -83.715032))));//bonisteel 3
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.290411, -83.713068))));//bonisteel 4
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.292181, -83.712736))));//beal 5
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.293581, -83.712634))));//beal 6
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.293931, -83.714624))));//hayward 7
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.293931, -83.718916))));//hayward 8
+            dots.add(mapView.addMarker(new MarkerOptions()
+                    .icon(icon)
+                    .position(new LatLng(42.293415, -83.718824))));//murfin 9
+        }
+
+            mapView.setOnMyLocationChangeListener(this);
         mapView.onCreate(savedInstanceState);
 
     }
